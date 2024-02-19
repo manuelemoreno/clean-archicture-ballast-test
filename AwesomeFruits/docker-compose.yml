@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  awesomefruits.webapi:
+    image: ${DOCKER_REGISTRY-}awesomefruitswebapi
+    build:
+      context: .
+      dockerfile: AwesomeFruits.WebAPI/Dockerfile
+    ports:
+      - "8022:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDbSettings__ConnectionString=mongodb://rootuser:rootpass@mongodb:27017
+      - MongoDbSettings__DatabaseName=Fruits
+      - ASPNETCORE_URLS=http://+:80;https://+:443
+    depends_on:
+      - mongodb
+
+  awesomefruits.webapi-users:
+    image: ${DOCKER_REGISTRY-}awesomefruitswebapi-users
+    build:
+      context: .
+      dockerfile: AwesomeFruits.WebAPI.Users/Dockerfile
+    ports:
+      - "8021:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDbSettings__ConnectionString=mongodb://rootuser:rootpass@mongodb:27017
+      - MongoDbSettings__DatabaseName=Fruits
+      - ASPNETCORE_URLS=http://+:80;https://+:443
+
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rootuser
+      MONGO_INITDB_ROOT_PASSWORD: rootpass
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
+
