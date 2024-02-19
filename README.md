@@ -1,5 +1,6 @@
 # Introduction
 The test application is intended to demostrate Clean Architecture principles applied to NET 7 Web API applications. 
+
 The Domain Entity chosen is **Fruit**. And the application name is "**AwesomeFruits**"
 
 ## User Stories:
@@ -8,14 +9,14 @@ From the testing statements, I created two user stories that I could facilitate 
 ### User Story #1
 As a non-user, I want to create an account so that I can login to the fruits application. 
 
-Acceptance criterias:
+**Acceptance criterias**:
 - An error is shown if the creation fields are missing.
 - An error is shown if the username already exists.
 
 ### User Story #2
 As an authorized user, I want to be able to create, retrieve, update and delete fruits. 
 
-Acceptance criterias:
+**Acceptance criterias**:
 - An error is shown if the fruit fields are missing.
 - An error is shown if the fruit name already exists.
 - An erros is shown if the user is not authorized.
@@ -53,6 +54,8 @@ If all is success, the response should return the bearer token
 }
 ```
 
+Use this token and add it to the Authorization header in the operations of the WebAPI.
+
 Swagger is also available for both APIs. 
 
 **Swagger for the WebAPI Users**:
@@ -62,6 +65,7 @@ http://localhost:8021/swagger/index.html
 http://localhost:8022/swagger/index.html
 
 Run docker compose down to release resources after reviewing
+
 ```bash
  docker-compose down
 ```
