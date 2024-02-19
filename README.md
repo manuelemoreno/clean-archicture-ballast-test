@@ -61,10 +61,10 @@ Use this token and add it to the Authorization header in the operations of the W
 Swagger is also available for both APIs. 
 
 **Swagger for the WebAPI Users**:
-http://localhost:8021/swagger/index.html
+https://localhost:9021/swagger/index.html
 
 **Swagger for the WebAPI**:
-http://localhost:8022/swagger/index.html
+https://localhost:9022/swagger/index.html
 
 Run docker compose down to release resources after reviewing
 
