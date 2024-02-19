@@ -37,6 +37,8 @@ Go to the folder **AwesomeFruits** and run docker compose in console
  docker-compose up -d
 ```
 
+Three containers will be created. Two web apis and one mongo database.
+
 Example of a request in the WebApi Users Use __*POST*__ on /api/Auth/register to generate an bearer token:
 ```bash
 {
