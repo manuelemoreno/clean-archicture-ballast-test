@@ -1,17 +1,20 @@
 # Introduction
 The test application is intended to demostrate Clean Architecture principles applied to NET 7 Web API applications. 
+The Domain Entity chosen is **Fruit**. And the application name is "**AwesomeFruits**"
 
 ## User Stories:
-From the testing statements I created 2 user stories that I could facilitate the appliance of TDD.
+From the testing statements, I created two user stories that I could facilitate the appliance of TDD.
 
 ### User Story #1
 As a non-user, I want to create an account so that I can login to the fruits application. 
+
 Acceptance criterias:
 - An error is shown if the creation fields are missing.
 - An error is shown if the username already exists.
 
 ### User Story #2
 As an authorized user, I want to be able to create, retrieve, update and delete fruits. 
+
 Acceptance criterias:
 - An error is shown if the fruit fields are missing.
 - An error is shown if the fruit name already exists.
